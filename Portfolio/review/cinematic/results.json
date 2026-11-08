@@ -1,0 +1,794 @@
+[
+  {
+    "name": "desktop",
+    "span": {
+      "start": -0.001,
+      "end": 4831,
+      "duration": 20.96
+    },
+    "transitionPixels": 910.4224212786261,
+    "samples": [
+      {
+        "label": "closeup",
+        "t": 0,
+        "time": 0,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 2.2,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "zoom-mid",
+        "t": 0.75,
+        "time": 0,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1.5995,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "zoom-end",
+        "t": 1.5,
+        "time": 0,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "video-mid",
+        "t": 3.3,
+        "time": 3.958333,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "video-end",
+        "t": 5.1,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "dissolve",
+        "t": 5.5,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 0.4448,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "quote-1",
+        "t": 6.45,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(225, 224, 220)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 1,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "quote-2",
+        "t": 8.02,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(94, 94, 91)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 1,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "quote-3",
+        "t": 9.14,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(32, 32, 31)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 1,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "black",
+        "t": 9.8,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(8, 8, 8)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      }
+    ],
+    "rapidTime": 7.75,
+    "errors": []
+  },
+  {
+    "name": "mobile",
+    "span": {
+      "start": -0.001,
+      "end": 1983,
+      "duration": 9.8
+    },
+    "transitionPixels": 799.2708112244898,
+    "samples": [
+      {
+        "label": "closeup",
+        "t": 0,
+        "time": 0,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 2.2,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "zoom-mid",
+        "t": 0.75,
+        "time": 0,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1.599,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "zoom-end",
+        "t": 1.5,
+        "time": 0,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "video-mid",
+        "t": 3.3,
+        "time": 3.958333,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "video-end",
+        "t": 5.1,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "dissolve",
+        "t": 5.5,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 0.4468,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "quote-1",
+        "t": 6.45,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(225, 224, 220)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 1,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "quote-2",
+        "t": 8.02,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(94, 94, 91)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 1,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "quote-3",
+        "t": 9.14,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(32, 32, 31)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 1,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "black",
+        "t": 9.8,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(8, 8, 8)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      }
+    ],
+    "rapidTime": 7.75,
+    "errors": []
+  },
+  {
+    "name": "tablet",
+    "span": {
+      "start": -0.001,
+      "end": 5636,
+      "duration": 20.96
+    },
+    "transitionPixels": 1062.1280510496183,
+    "samples": [
+      {
+        "label": "closeup",
+        "t": 0,
+        "time": 0,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 2.2,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "zoom-mid",
+        "t": 0.75,
+        "time": 0,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1.599,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "zoom-end",
+        "t": 1.5,
+        "time": 0,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1.001,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "video-mid",
+        "t": 3.3,
+        "time": 3.958333,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "video-end",
+        "t": 5.1,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 1,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "dissolve",
+        "t": 5.5,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(247, 246, 242)",
+        "portraitOpacity": 0.4471,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "quote-1",
+        "t": 6.45,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(225, 224, 220)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 1,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "quote-2",
+        "t": 8.02,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(94, 94, 91)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 1,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "quote-3",
+        "t": 9.14,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(32, 32, 31)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 1,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "label": "black",
+        "t": 9.8,
+        "time": 7.916666,
+        "duration": 7.958333,
+        "paused": true,
+        "scale": 1,
+        "bg": "rgb(8, 8, 8)",
+        "portraitOpacity": 0,
+        "quotes": [
+          {
+            "opacity": 0,
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          },
+          {
+            "opacity": 0,
+            "color": "rgb(247, 247, 243)"
+          }
+        ],
+        "overflow": false
+      }
+    ],
+    "rapidTime": 7.75,
+    "errors": []
+  },
+  {
+    "reducedMotion": true
+  }
+]

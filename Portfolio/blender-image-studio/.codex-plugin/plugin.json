@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "blender-image-studio",
+  "version": "0.1.0",
+  "description": "Turn a single reference image into a local 3D model and a polished Blender render.",
+  "author": {
+    "name": "Sarthak Salvi"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Blender Image Studio",
+        "shortDescription": "Image to Blender render",
+        "longDescription": "Generate a 3D mesh from a reference image with a local TripoSR model, import it into Blender, create a studio scene, and save the render and editable .blend file.",
+        "developerName": "Sarthak Salvi",
+        "category": "Developer Tools",
+        "capabilities": ["Interactive"],
+        "logo": "../assets/icon.svg",
+        "composerIcon": "../assets/icon.svg",
+        "defaultPrompt": [
+          "Turn this reference image into a 3D model and render it in Blender.",
+          "Check whether my local image-to-3D setup is ready.",
+          "Render this existing mesh as a polished product shot."
+        ]
+      }
+    }
+  }
+}

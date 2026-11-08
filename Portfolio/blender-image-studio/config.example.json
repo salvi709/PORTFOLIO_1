@@ -1,0 +1,5 @@
+{
+  "blenderPath": "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+  "pythonPath": ".venv\\Scripts\\python.exe",
+  "triposrRoot": "vendor\\TripoSR"
+}

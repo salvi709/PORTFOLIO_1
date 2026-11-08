@@ -1,0 +1,280 @@
+/* ============================================================
+   GitHubSection — "Behind the Commits"
+   Static demonstrative contribution calendar + tech-stack marquee.
+   ============================================================ */
+
+.github-section {
+  padding-block: var(--section-padding, 10rem) var(--section-padding, 10rem);
+  padding-inline: clamp(1.5rem, 6vw, 7rem);
+  background: var(--ink);
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+}
+
+/* ---- header block ---- */
+.gh-header-block {
+  /* SectionHeader handles its own spacing */
+}
+
+/* ============================================================
+   Contribution calendar
+   ============================================================ */
+.gh-grid-wrap {
+  margin-top: 4.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.gh-grid-wrap::-webkit-scrollbar { display: none; }
+
+.gh-grid {
+  display: flex;
+  gap: 0.6rem;
+  min-width: max-content;
+}
+
+/* day-of-week labels — vertical column */
+.gh-day-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 2px;
+}
+
+.gh-day-labels span {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  line-height: 1;
+  height: 11px;
+  display: flex;
+  align-items: center;
+}
+
+/* grid cells */
+.gh-cells {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.gh-row {
+  display: flex;
+  gap: 3px;
+}
+
+.gh-cell {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.gh-cell:hover {
+  transform: scale(1.35);
+  opacity: 1 !important;
+}
+
+/* level colours — cobalt blue scale */
+.gh-cell--l0 { background: rgba(49, 91, 219, 0.07); }
+.gh-cell--l1 { background: rgba(49, 91, 219, 0.28); }
+.gh-cell--l2 { background: rgba(49, 91, 219, 0.50); }
+.gh-cell--l3 { background: rgba(49, 91, 219, 0.73); }
+.gh-cell--l4 { background: var(--accent); }
+
+.gh-grid-note {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0.9rem 0 0;
+  opacity: 0.6;
+}
+
+/* ============================================================
+   Stats strip
+   ============================================================ */
+.gh-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 4rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-block: 2rem;
+  flex-wrap: wrap;
+}
+
+.gh-stat {
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+.gh-stat-value {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: var(--paper);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.gh-stat-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.gh-stat-divider {
+  width: 1px;
+  height: 3rem;
+  background: var(--line);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Tech-stack marquee
+   ============================================================ */
+.gh-marquee-wrap {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+  /* Fade edges */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.gh-marquee {
+  overflow: hidden;
+}
+
+.gh-marquee-track {
+  display: flex;
+  gap: 0.6rem;
+  width: max-content;
+  animation-duration: 32s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.gh-marquee--fwd .gh-marquee-track {
+  animation-name: gh-scroll-fwd;
+}
+
+.gh-marquee--rev .gh-marquee-track {
+  animation-name: gh-scroll-rev;
+}
+
+@keyframes gh-scroll-fwd {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes gh-scroll-rev {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gh-marquee-track {
+    animation: none;
+  }
+}
+
+.gh-skill-chip {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.gh-skill-chip:hover {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* ============================================================
+   CTA / disclaimer
+   ============================================================ */
+.gh-cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.gh-cta-note {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.gh-cta-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s, color 0.2s;
+}
+
+.gh-cta-link:hover {
+  color: var(--accent-hover, #4871f7);
+  text-decoration-color: var(--accent-hover, #4871f7);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+  .gh-stat {
+    padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .github-section {
+    padding-inline: 1.25rem;
+  }
+
+  .gh-stat-divider {
+    display: none;
+  }
+
+  .gh-stats {
+    gap: 1.5rem;
+  }
+
+  .gh-stat {
+    flex: 1 1 calc(50% - 1rem);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1.2rem;
+  }
+
+  .gh-stat:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+}
+

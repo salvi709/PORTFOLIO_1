@@ -1,0 +1,10 @@
+[
+  "Zoom/modifier/horizontal wheel gestures are not intercepted",
+  "Nested container retains native 120px wheel movement and does not move document",
+  "Modal scroll remains native while document stays locked",
+  "Keyboard page navigation remains native",
+  "Top/bottom boundary wheel events are released",
+  "Line-mode wheel units are normalized before scaling",
+  "Reduced motion preserves lower wheel displacement without animated pins",
+  "Coarse-pointer/mobile context retains native wheel behavior"
+]

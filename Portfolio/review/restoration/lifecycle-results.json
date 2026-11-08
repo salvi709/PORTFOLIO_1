@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Whole-word reveal visually sampled through five opening phases",
+    "Refresh inside the drum preserves the exact ring handoff geometry",
+    "StrictMode and repeated breakpoint changes leave one active pin, one master timeline, and no accumulated triggers (completed one-time section reveals clean themselves up)",
+    "Refresh and backward navigation restore readable hero content"
+  ],
+  "initial": {
+    "nameWords": 2,
+    "characterSpans": 0,
+    "pins": 1,
+    "triggerCount": 14
+  },
+  "finalTriggerCount": 10
+}

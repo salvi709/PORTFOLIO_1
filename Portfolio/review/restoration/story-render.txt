@@ -1,0 +1,101 @@
+  return (
+    <>
+    <div id="hero" ref={root} className={`scroll-story ${cinematic ? "cinematic" : ""}`}>
+      <div className="story-stage" ref={stage}>
+        <AtmosphericBackground />
+        <SceneHero />
+        <SceneBuild />
+        <SceneCreate />
+        <SceneMerge />
+
+        <div className="story-frame">
+          <button
+            className="bridge-open"
+            tabIndex={-1}
+            aria-hidden="true"
+            onClick={() =>
+              setSelected({ type: "video", data: videoProjects[0] })
+            }
+          >
+            <span>
+              Cinematic Edit <b>Explore ↗</b>
+            </span>
+          </button>
+          <div className="browser-layer" aria-hidden="true">
+            <div className="browser-chrome">
+              <i />
+              <i />
+              <i />
+              <span>splitzy / a small idea, made real</span>
+            </div>
+            <ProjectVisual project={developmentProjects[0]} decorative />
+          </div>
+          <div className="film-layer" aria-hidden="true">
+            <ProjectVisual project={videoProjects[0]} decorative />
+          </div>
+        </div>
+
+        <div className="edit-tracks" aria-hidden="true">
+          <div className="ruler">
+            00:00 <span>00:08</span>
+            <span>00:16</span>
+            <span>00:24</span>
+          </div>
+          <div>
+            <b>V1</b>
+            <i>01 — THE ARRIVAL</i>
+            <i>02 — THE MOMENT</i>
+          </div>
+          <div>
+            <b>V2</b>
+            <i>TITLE / AFTER HOURS</i>
+          </div>
+          <div>
+            <b>A1</b>
+            <i className="audio-track">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</i>
+          </div>
+          <span className="playhead" />
+        </div>
+
+        <div className="echo-frame">
+          <ProjectVisual project={developmentProjects[0]} decorative />
+          <button
+            className="bridge-open"
+            tabIndex={-1}
+            aria-hidden="true"
+            onClick={() =>
+              setSelected({ type: "dev", data: developmentProjects[0] })
+            }
+          >
+            <span>
+              Splitzy <b>View project ↗</b>
+            </span>
+          </button>
+        </div>
+
+        <div className="gallery-cue">
+          <p className="eyebrow">04 / THE IDEAS BECOME THE WORK</p>
+          <p>
+            SELECTED <em>WORK</em>
+          </p>
+          <a className="text-link" href="#work">
+            Explore the collection <span>↓</span>
+          </a>
+        </div>
+
+        <div className="story-progress" aria-hidden="true" />
+        {cinematic && <SelectedWork embedded controller={wheelUpdate} progressSource={wheelProgress} onNavigate={navigateGallery} />}
+      </div>
+
+      {selected && (
+        <WorkDialog
+          item={selected}
+          onClose={() => setSelected(null)}
+          onSelectNext={setSelected}
+        />
+      )}
+    </div>
+    {!cinematic && <SelectedWork />}
+    </>
+  );
+}

@@ -1,0 +1,27 @@
+{
+  "checks": [
+    "Opening completes with name, supporting copy, identity and scroll cue visible",
+    "Canvas vertices displace near pointer, distant geometry stays fixed, springs return to neutral, frame loop sleeps",
+    "Seven story/gallery positions reverse exactly and remain unchanged when scrolling stops",
+    "Edits link selects first film in the embedded wheel",
+    "All seven project dialogs, wrapping navigation, keyboard focus containment and Escape restoration",
+    "1366×620: original wheel, one pin, no overflow, Edits and project dialog work",
+    "768×1024: original wheel, one pin, no overflow, Edits and project dialog work",
+    "390×844: original wheel, one pin, no overflow, Edits and project dialog work",
+    "320×640: original wheel, one pin, no overflow, Edits and project dialog work",
+    "Repeated breakpoint and motion-preference changes clean up pins; reduced-motion content remains readable with static mesh",
+    "Touch device does not activate cursor deformation",
+    "No browser runtime errors"
+  ],
+  "metrics": {
+    "meshMaxDisplacement": 22.7829282878848,
+    "meshFrameMs": {
+      "median": 0.9000000059604645,
+      "p95": 5.299999982118607,
+      "samples": 87
+    },
+    "filmRatio": 1.7844155844155845,
+    "cinematicPageShare": 0.5403163876516665
+  },
+  "errors": []
+}

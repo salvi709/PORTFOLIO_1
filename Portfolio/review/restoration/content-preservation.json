@@ -1,0 +1,30 @@
+[
+  {
+    "File": "src\\components\\sections\\AboutSection.jsx",
+    "Unchanged": true
+  },
+  {
+    "File": "src\\components\\sections\\ContactSection.jsx",
+    "Unchanged": true
+  },
+  {
+    "File": "src\\components\\sections\\ExploringSection.jsx",
+    "Unchanged": true
+  },
+  {
+    "File": "src\\components\\sections\\SkillsSection.jsx",
+    "Unchanged": true
+  },
+  {
+    "File": "src\\components\\footer\\Footer.jsx",
+    "Unchanged": true
+  },
+  {
+    "File": "src\\data\\portfolioData.js",
+    "Unchanged": true
+  },
+  {
+    "File": "src\\data\\media.js",
+    "Unchanged": true
+  }
+]

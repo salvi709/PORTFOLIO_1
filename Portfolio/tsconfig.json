@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": false,
+    "esModuleInterop": true,
+    "paths": { "@/*": ["./src/*"] }
+  },
+  "include": ["src/components/ui/liquid-shader*.tsx", "src/components/ui/liquid-glass-navbar.tsx", "src/components/ui/works-wheel.tsx", "src/components/ui/motion-footer.tsx", "src/lib/*.ts"]
+}
+

@@ -1,0 +1,11 @@
+{
+  "changedSourceFiles": [
+    "src\\App.jsx",
+    "src\\hooks\\useWheelSensitivity.js",
+    "src\\components\\common\\InteractiveGrid.jsx",
+    "src\\components\\scroll-story\\ScrollStory.jsx"
+  ],
+  "gridPhysicsAndSpacingUnchanged": true,
+  "timelineOnlyChange": "Removed the previous 1.25 distance multiplier",
+  "allOtherSourceFilesUnchanged": true
+}

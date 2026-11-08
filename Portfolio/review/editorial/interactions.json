@@ -1,0 +1,65 @@
+[
+  {
+    "dialog": 1,
+    "title": "SPLITZY",
+    "keyboard": true,
+    "focusRestored": true
+  },
+  {
+    "dialog": 2,
+    "title": "CINEMATIC EDIT",
+    "keyboard": true,
+    "focusRestored": true
+  },
+  {
+    "dialog": 3,
+    "title": "BIS SAHAYAK",
+    "keyboard": true,
+    "focusRestored": true
+  },
+  {
+    "dialog": 4,
+    "title": "SHORT FORM",
+    "keyboard": true,
+    "focusRestored": true
+  },
+  {
+    "dialog": 5,
+    "title": "TRADE QUEST",
+    "keyboard": true,
+    "focusRestored": true
+  },
+  {
+    "dialog": 6,
+    "title": "MOTION EXPERIMENT",
+    "keyboard": true,
+    "focusRestored": true
+  },
+  {
+    "dialog": 7,
+    "title": "VISUAL STORY",
+    "keyboard": true,
+    "focusRestored": true
+  },
+  {
+    "scrub": [
+      0.000009,
+      0.997448,
+      1.985296,
+      2.982734,
+      3.980173,
+      4.977612,
+      5.96546,
+      6.962898,
+      7.957332,
+      5.96546,
+      3.980173,
+      1.985296,
+      0.000009
+    ],
+    "pausedWhenStopped": true,
+    "breakpointCleanup": true,
+    "reducedMotion": true,
+    "errors": []
+  }
+]

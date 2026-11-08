@@ -1,0 +1,10 @@
+{
+  "gridMidpointCorrect": true,
+  "reducedQuotesDoNotOverlap": true,
+  "breakpointCleanup": true,
+  "seekMs": {
+    "samples": 17,
+    "median": 0.5,
+    "p95": 2.5
+  }
+}

@@ -1,0 +1,173 @@
+[
+  {
+    "name": "desktop",
+    "label": "mid",
+    "time": 3.980173,
+    "paused": true,
+    "bg": "rgb(247, 246, 242)",
+    "theme": "light"
+  },
+  {
+    "name": "desktop",
+    "label": "final",
+    "time": 7.957332,
+    "paused": true,
+    "bg": "rgb(247, 246, 242)",
+    "theme": "light"
+  },
+  {
+    "name": "desktop",
+    "label": "transition",
+    "time": 7.957332,
+    "paused": true,
+    "bg": "rgb(127, 127, 125)",
+    "theme": "dark"
+  },
+  {
+    "name": "desktop",
+    "label": "build",
+    "time": 7.957332,
+    "paused": true,
+    "bg": "rgb(8, 8, 8)",
+    "theme": "dark"
+  },
+  {
+    "name": "desktop",
+    "label": "create",
+    "time": 7.957332,
+    "paused": true,
+    "bg": "rgb(8, 8, 8)",
+    "theme": "dark"
+  },
+  {
+    "name": "desktop",
+    "label": "merge",
+    "time": 7.957332,
+    "paused": true,
+    "bg": "rgb(8, 8, 8)",
+    "theme": "dark"
+  },
+  {
+    "name": "desktop",
+    "initial": {
+      "video": 0,
+      "duration": 7.958333,
+      "paused": true,
+      "overflow": false,
+      "theme": "light",
+      "entry": true,
+      "reversed": 0.000009
+    },
+    "errors": []
+  },
+  {
+    "name": "mobile",
+    "label": "mid",
+    "time": 3.878564,
+    "paused": true,
+    "bg": "rgba(0, 0, 0, 0)",
+    "theme": "light"
+  },
+  {
+    "name": "mobile",
+    "label": "final",
+    "time": 7.956414,
+    "paused": true,
+    "bg": "rgba(0, 0, 0, 0)",
+    "theme": "light"
+  },
+  {
+    "name": "mobile",
+    "label": "transition",
+    "time": 7.956414,
+    "paused": true,
+    "bg": "rgba(0, 0, 0, 0)",
+    "theme": "dark"
+  },
+  {
+    "name": "mobile",
+    "initial": {
+      "video": 0,
+      "duration": 7.958333,
+      "paused": true,
+      "overflow": false,
+      "theme": "light",
+      "entry": false,
+      "reversed": 0.000007
+    },
+    "errors": []
+  },
+  {
+    "name": "tablet",
+    "label": "mid",
+    "time": 3.978802,
+    "paused": true,
+    "bg": "rgb(247, 246, 242)",
+    "theme": "light"
+  },
+  {
+    "name": "tablet",
+    "label": "final",
+    "time": 7.957332,
+    "paused": true,
+    "bg": "rgb(247, 246, 242)",
+    "theme": "light"
+  },
+  {
+    "name": "tablet",
+    "label": "transition",
+    "time": 7.957332,
+    "paused": true,
+    "bg": "rgb(127, 126, 124)",
+    "theme": "dark"
+  },
+  {
+    "name": "tablet",
+    "label": "build",
+    "time": 7.957332,
+    "paused": true,
+    "bg": "rgb(8, 8, 8)",
+    "theme": "dark"
+  },
+  {
+    "name": "tablet",
+    "label": "create",
+    "time": 7.957332,
+    "paused": true,
+    "bg": "rgb(8, 8, 8)",
+    "theme": "dark"
+  },
+  {
+    "name": "tablet",
+    "label": "merge",
+    "time": 7.957332,
+    "paused": true,
+    "bg": "rgb(8, 8, 8)",
+    "theme": "dark"
+  },
+  {
+    "name": "tablet",
+    "initial": {
+      "video": 0,
+      "duration": 7.958333,
+      "paused": true,
+      "overflow": false,
+      "theme": "light",
+      "entry": false,
+      "reversed": 0.000008
+    },
+    "errors": []
+  },
+  {
+    "name": "reduced",
+    "initial": {
+      "video": 0,
+      "duration": null,
+      "paused": true,
+      "overflow": false,
+      "theme": "light",
+      "entry": false
+    },
+    "errors": []
+  }
+]

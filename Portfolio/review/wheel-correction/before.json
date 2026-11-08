@@ -1,0 +1,139 @@
+{
+  "phase": "before",
+  "samples": [
+    {
+      "delta": 12,
+      "start": 200,
+      "end": 212,
+      "displacement": 12,
+      "afterIdle": 212
+    },
+    {
+      "delta": 12,
+      "start": 212,
+      "end": 224,
+      "displacement": 12,
+      "afterIdle": 224
+    },
+    {
+      "delta": 24,
+      "start": 224,
+      "end": 248,
+      "displacement": 24,
+      "afterIdle": 248
+    },
+    {
+      "delta": 60,
+      "start": 248,
+      "end": 308,
+      "displacement": 60,
+      "afterIdle": 308
+    },
+    {
+      "delta": 120,
+      "start": 308,
+      "end": 428,
+      "displacement": 120,
+      "afterIdle": 428
+    },
+    {
+      "delta": -120,
+      "start": 428,
+      "end": 308,
+      "displacement": -120,
+      "afterIdle": 308
+    },
+    {
+      "delta": -60,
+      "start": 308,
+      "end": 248,
+      "displacement": -60,
+      "afterIdle": 248
+    },
+    {
+      "delta": -24,
+      "start": 248,
+      "end": 224,
+      "displacement": -24,
+      "afterIdle": 224
+    },
+    {
+      "delta": -12,
+      "start": 224,
+      "end": 212,
+      "displacement": -12,
+      "afterIdle": 212
+    },
+    {
+      "delta": -12,
+      "start": 212,
+      "end": 200,
+      "displacement": -12,
+      "afterIdle": 200
+    }
+  ],
+  "events": [
+    {
+      "delta": 12,
+      "mode": 0,
+      "trusted": true,
+      "prevented": false
+    },
+    {
+      "delta": 12,
+      "mode": 0,
+      "trusted": true,
+      "prevented": false
+    },
+    {
+      "delta": 24,
+      "mode": 0,
+      "trusted": true,
+      "prevented": false
+    },
+    {
+      "delta": 60,
+      "mode": 0,
+      "trusted": true,
+      "prevented": false
+    },
+    {
+      "delta": 120,
+      "mode": 0,
+      "trusted": true,
+      "prevented": false
+    },
+    {
+      "delta": -120,
+      "mode": 0,
+      "trusted": true,
+      "prevented": false
+    },
+    {
+      "delta": -60,
+      "mode": 0,
+      "trusted": true,
+      "prevented": false
+    },
+    {
+      "delta": -24,
+      "mode": 0,
+      "trusted": true,
+      "prevented": false
+    },
+    {
+      "delta": -12,
+      "mode": 0,
+      "trusted": true,
+      "prevented": false
+    },
+    {
+      "delta": -12,
+      "mode": 0,
+      "trusted": true,
+      "prevented": false
+    }
+  ],
+  "pinDistance": 2618,
+  "errors": []
+}

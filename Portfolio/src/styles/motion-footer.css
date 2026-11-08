@@ -1,0 +1,57 @@
+/* Scoped adaptation: existing typography, theme and credit-strip sizing. */
+.motion-footer-shell { position:relative; z-index:1; height:max(740px,100svh); clip-path:inset(0); isolation:isolate; }
+.motion-footer { position:fixed; bottom:0; left:0; width:100%; height:max(740px,100svh); overflow:hidden; background:var(--ink); color:var(--paper); font-family:var(--font-body); }
+.motion-footer .footer-aurora { position:absolute; inset:9% 4% 2%; pointer-events:none; background:radial-gradient(ellipse at 50% 55%,rgba(255,101,79,.06),rgba(247,247,243,.022) 34%,transparent 68%); animation:footer-breathe 8s ease-in-out infinite alternate; }
+.motion-footer .footer-bg-grid { position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(#f7f7f307 1px,transparent 1px),linear-gradient(90deg,#f7f7f307 1px,transparent 1px); background-size:64px 64px; mask-image:linear-gradient(transparent,#000 35%,#000 65%,transparent); }
+.footer-giant-text { position:absolute; bottom:6%; left:0; width:100%; text-align:center; font:400 25vw/.8 var(--font-display); letter-spacing:-.045em; color:transparent; -webkit-text-stroke:1px #f7f7f311; background:linear-gradient(#f7f7f30f,transparent 85%); background-clip:text; pointer-events:none; user-select:none; }
+.footer-marquee { position:absolute; top:6%; left:-5%; width:110%; transform:rotate(-2deg); border-block:1px solid var(--line); background:#111e; padding:18px 0; overflow:hidden; }
+.footer-marquee-track { display:flex; width:max-content; animation:footer-scroll-marquee 40s linear infinite; }
+.footer-marquee-group { display:flex; align-items:center; gap:46px; padding-right:46px; flex:none; font-size:11px; font-weight:500; letter-spacing:.13em; text-transform:uppercase; white-space:nowrap; color:var(--secondary); }
+.footer-marquee-group i { color:var(--accent); font-size:14px; font-style:normal; }
+.footer-center { position:absolute; inset:19% 7% 19%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; z-index:1; }
+.footer-center .eyebrow { font-size:8px; letter-spacing:.12em; margin-bottom:24px; }
+.footer-text-glow { font:400 clamp(70px,7.6vw,114px)/.92 var(--font-display); letter-spacing:-.035em; margin:0 0 34px; background:linear-gradient(170deg,var(--paper) 28%,#b8b8b0); color:var(--paper); background-clip:text; -webkit-text-fill-color:transparent; }
+.footer-text-glow em { font-family:inherit; font-style:italic; }
+.footer-links { display:flex; flex-direction:column; align-items:center; gap:18px; }
+.footer-primary-links,.footer-secondary-links { display:flex; flex-wrap:wrap; justify-content:center; gap:14px; }
+.footer-glass-pill { display:inline-flex; align-items:center; justify-content:center; gap:28px; min-height:48px; padding:14px 25px; border:1px solid #f7f7f323; border-radius:999px; background:linear-gradient(145deg,#f7f7f30b,#f7f7f303); box-shadow:inset 0 1px 0 #ffffff0b,0 8px 25px #0003; color:var(--paper); font-size:13px; transition:translate .28s ease,border-color .25s,color .25s,background-color .25s; }
+.footer-primary-links .footer-glass-pill { min-width:192px; min-height:58px; }
+.footer-primary-links .footer-glass-pill > span { font-size:20px; color:var(--accent); }
+.footer-secondary-links .footer-glass-pill { font-size:11px; padding:11px 20px; color:var(--secondary); }
+.footer-glass-pill:hover { border-color:rgba(49,91,219,.45); color:var(--paper); background-color:#ffffff08; }
+.motion-footer-credits.site-footer { position:absolute; bottom:0; left:0; width:100%; background:#080808b3; }
+.motion-footer-credits > a:last-child:hover { color:var(--accent); }
+.motion-footer-shell:not([data-visible=true]) .footer-marquee-track,.motion-footer-shell:not([data-visible=true]) .footer-aurora,.motion-footer-shell[data-sleeping=true] .footer-marquee-track,.motion-footer-shell[data-sleeping=true] .footer-aurora { animation-play-state:paused; }
+.motion-footer-shell:focus-within .footer-marquee-track { animation-play-state:paused; }
+@keyframes footer-scroll-marquee { to { transform:translateX(-50%); } }
+@keyframes footer-breathe { from { opacity:.6; transform:scale(.97); } to { opacity:1; transform:scale(1.03); } }
+@media(max-width:699px) {
+  .motion-footer-shell,.motion-footer { height:max(700px,100svh); }
+  .footer-center { inset:17% 6% 24%; }
+  .footer-center .eyebrow { max-width:240px; line-height:1.7; margin-bottom:20px; font-size:7px; }
+  .footer-text-glow { font-size:clamp(64px,18vw,90px); margin-bottom:28px; }
+  .footer-primary-links { gap:10px; }
+  .footer-primary-links .footer-glass-pill { min-width:0; min-height:52px; padding:12px 17px; font-size:11px; gap:16px; }
+  .footer-secondary-links { gap:9px; }
+  .footer-secondary-links .footer-glass-pill { font-size:10px; padding:10px 17px; }
+  .footer-marquee-group { font-size:9px; gap:30px; padding-right:30px; }
+  .footer-giant-text { font-size:30vw; bottom:20%; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .motion-footer-shell { clip-path:none; }
+  .motion-footer { position:absolute; }
+  .footer-marquee-track,.motion-footer .footer-aurora { animation:none; }
+  .footer-reveal,.footer-giant-text { transform:none !important; opacity:1 !important; }
+}
+@media(max-height:739px) {
+  .motion-footer-shell { clip-path:none; }
+  .motion-footer { position:absolute; }
+}
+
+/* ---- footer name: s"ART"hak ---- */
+.footer-name-art {
+  font-style: normal;
+  letter-spacing: inherit;
+  /* Quotes give visual emphasis; keep same paint colour as parent.
+     The subtle distinction comes purely from the typographic quoting. */
+}

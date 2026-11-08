@@ -1,0 +1,15 @@
+{
+  "components/scroll-story/SceneBuild.jsx": true,
+  "components/scroll-story/SceneCreate.jsx": true,
+  "components/scroll-story/MarqueeMerge.jsx": true,
+  "components/ui/works-wheel.tsx": true,
+  "components/common/ProjectPreviewModal.jsx": true,
+  "components/sections/SelectedWork.jsx": true,
+  "components/sections/AboutSection.jsx": true,
+  "components/sections/SkillsSection.jsx": true,
+  "components/sections/ExploringSection.jsx": true,
+  "components/sections/ContactSection.jsx": true,
+  "components/navbar/Navbar.jsx": true,
+  "data/portfolioData.js": true,
+  "Build/Create/merge/gallery choreography": true
+}

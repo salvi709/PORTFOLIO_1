@@ -1,0 +1,17 @@
+{
+  "checks": [
+    "Local Modero applied to supporting text",
+    "Edits navigation selects first film",
+    "Modal opens with close focus and contains Tab focus",
+    "Project next navigation wraps and preserves scroll lock",
+    "Escape closes and restores opener focus",
+    "320px: no page overflow, seven usable cards, no pinned sections, modal navigation",
+    "390px: no page overflow, seven usable cards, no pinned sections, modal navigation",
+    "768px: no page overflow, seven usable cards, no pinned sections, modal navigation",
+    "Reduced motion: static story, all projects, visible headings, no custom cursor",
+    "No browser runtime errors",
+    "Final production build: gallery remains aligned after resizing and reloading",
+    "Gallery transforms settle when idle; mobile image reveal completes"
+  ],
+  "failures": []
+}

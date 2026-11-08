@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280">
+  <defs>
+    <!-- Only this alpha silhouette is softened, never the video pixels. -->
+    <filter id="feather" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="22 34"/>
+    </filter>
+    <linearGradient id="top" x2="0" y2="1">
+      <stop stop-color="white" stop-opacity="0"/>
+      <stop offset=".018" stop-color="white"/>
+      <stop offset=".97" stop-color="white"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sides">
+      <stop stop-color="white" stop-opacity="0"/>
+      <stop offset=".055" stop-color="white"/>
+      <stop offset=".94" stop-color="white"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="horizontal" maskUnits="userSpaceOnUse" x="0" y="0" width="720" height="1280">
+      <rect width="720" height="1280" fill="url(#sides)"/>
+    </mask>
+    <mask id="edge" maskUnits="userSpaceOnUse" x="0" y="0" width="720" height="1280">
+      <rect width="720" height="1280" fill="url(#top)" mask="url(#horizontal)"/>
+    </mask>
+  </defs>
+  <g mask="url(#edge)">
+    <path fill="white" filter="url(#feather)" d="M42 40 C120 27 164 35 235 23 C315 9 380 14 446 24 C528 36 604 19 675 45 C693 106 680 169 692 232 C702 302 686 356 693 425 C704 500 681 564 691 638 C699 700 680 775 691 846 C700 928 678 993 686 1065 C695 1133 680 1194 659 1195 C590 1245 517 1195 450 1216 C370 1250 297 1196 222 1228 C152 1257 97 1199 48 1204 C25 1161 40 1090 27 1027 C18 956 36 882 24 809 C13 737 34 673 25 597 C16 529 33 462 24 394 C13 325 34 258 25 193 C18 132 26 85 42 40 Z"/>
+    <!-- A guaranteed opaque core covers the face and central upper body. -->
+    <path fill="white" d="M90 65 Q360 43 627 66 L630 1080 Q360 1100 90 1085 Z"/>
+  </g>
+</svg>
+

@@ -1,0 +1,14 @@
+{
+  "changedFiles": [
+    "src\\styles\\polish.css",
+    "src\\styles\\portfolio.css",
+    "src\\components\\common\\InteractiveGrid.jsx",
+    "src\\components\\scroll-story\\ScrollStory.jsx",
+    "tailwind.config.js"
+  ],
+  "checks": [
+    "Only color literals changed in palette and grid files",
+    "Only the ScrollTrigger distance multiplier changed in ScrollStory",
+    "All other source files are byte-for-byte unchanged"
+  ]
+}
