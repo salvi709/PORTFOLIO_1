@@ -20,11 +20,6 @@ export default function Navbar() {
 
   // Helper to accurately calculate the scroll position where the Selected Work gallery begins
   const getWorkTargetY = () => {
-    const trigger = ScrollTrigger.getById("portfolio-story");
-    if (trigger) {
-      const progressFraction = (HERO_OFFSET + GALLERY_START) / STORY_DURATION;
-      return trigger.start + (trigger.end - trigger.start) * progressFraction + 20;
-    }
     const workEl = document.getElementById("work");
     if (workEl) {
       return workEl.getBoundingClientRect().top + window.scrollY - 70;
@@ -74,6 +69,7 @@ export default function Navbar() {
       const contactEl = document.getElementById("contact");
       const skillsEl = document.getElementById("skills");
       const aboutEl = document.getElementById("about");
+      const workEl = document.getElementById("work");
 
       let current = "hero";
 
@@ -83,13 +79,8 @@ export default function Navbar() {
         current = "skills";
       } else if (aboutEl && aboutEl.getBoundingClientRect().top <= threshold) {
         current = "about";
-      } else if (workTargetY > 0 && y >= workTargetY - 200) {
+      } else if (workEl && workEl.getBoundingClientRect().top <= threshold) {
         current = "work";
-      } else {
-        const stage = document.querySelector(".story-stage");
-        if (stage && stage.dataset.phase === "gallery") {
-          current = "work";
-        }
       }
 
       setActiveId(current);

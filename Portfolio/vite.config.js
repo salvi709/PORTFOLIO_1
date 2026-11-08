@@ -7,6 +7,7 @@ import { devInquiryPlugin } from "./src/lib/devInquiryPlugin.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  base: "./",
   plugins: [react(), devInquiryPlugin()],
   resolve: {
     alias: {

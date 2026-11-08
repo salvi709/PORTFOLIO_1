@@ -1,439 +1,466 @@
 /* ============================================================
    ServicesSection — "What I Can Build For You" (Section 05)
-   Seamlessly integrates 21st.dev Tumble Deck 3D Showcase with
-   monochrome editorial typography, cobalt accents & dark luxury aesthetic.
+   Finite 4-Card 3D Tumble Stack driven by Main Page Scroll
    ============================================================ */
 
 .services-section {
-  padding-block: var(--section-padding, 10rem) var(--section-padding, 10rem);
-  padding-inline: clamp(1.5rem, 6vw, 7rem);
+  position: relative;
+  width: 100%;
   background: var(--ink, #030303);
   border-top: 1px solid var(--line, rgba(255, 255, 255, 0.08));
+}
+
+.services-stage {
   position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
   overflow: hidden;
-}
-
-.services-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-/* ---- Intro narrative ---- */
-.services-intro {
-  margin-top: 2rem;
-  margin-bottom: 3.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  max-width: 72ch;
-}
-
-.services-intro__text {
-  font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
-  line-height: 1.7;
-  color: var(--muted, #a1a1aa);
-  margin: 0;
-}
-
-.services-intro__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.4rem 0.9rem;
-  background: color-mix(in srgb, var(--accent, #315bdb) 8%, rgba(255, 255, 255, 0.03));
-  border: 1px solid color-mix(in srgb, var(--accent, #315bdb) 25%, transparent);
-  border-radius: 999px;
-  width: fit-content;
-  font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--paper, #f7f5f0);
-}
-
-.services-intro__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
-  animation: servicesPulse 2s infinite ease-in-out;
-}
-
-@keyframes servicesPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
-}
-
-/* ============================================================
-   3D Tumble Deck Showcase
-   ============================================================ */
-
-.services-showcase-wrapper {
-  margin-block: 2.5rem 5rem;
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
-  border-radius: 12px;
-  background: radial-gradient(circle at 50% 0%, rgba(49, 91, 219, 0.07) 0%, rgba(255, 255, 255, 0.01) 60%),
-              var(--ink, #030303);
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.85),
-              inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  overflow: hidden;
-  position: relative;
-}
-
-.services-showcase-header {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.6rem;
-  border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.08));
-  background: rgba(255, 255, 255, 0.015);
-  backdrop-filter: blur(8px);
+  padding: clamp(1rem, 2.5vh, 2.25rem) clamp(1.5rem, 5vw, 4rem);
+  background: radial-gradient(circle at 50% 28%, rgba(49, 91, 219, 0.07) 0%, transparent 68%),
+              radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.01) 0%, transparent 50%),
+              var(--ink, #030303);
+  box-sizing: border-box;
 }
 
-.services-showcase-meta {
+/* ---- Header Area ---- */
+.services-header-wrap {
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  z-index: 10;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
 }
 
-.services-showcase-label {
+.services-header-wrap .section-heading {
+  margin-bottom: 0;
+}
+
+.services-header-wrap .section-heading h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+}
+
+/* ---- Stage Navigation Step Pills ---- */
+.services-nav-pills {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--paper, #f7f5f0);
-}
-
-.services-showcase-icon {
-  color: var(--accent, #315bdb);
-}
-
-.services-showcase-caption {
-  font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: 0.72rem;
-  color: var(--muted, #a1a1aa);
-  letter-spacing: 0.02em;
-}
-
-.services-showcase-hint {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--accent, #315bdb);
-  background: color-mix(in srgb, var(--accent, #315bdb) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent, #315bdb) 25%, transparent);
-  padding: 0.3rem 0.75rem;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
+  padding: 0.35rem;
   border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   user-select: none;
 }
 
-.services-hint-icon {
-  animation: hintFloat 2s infinite ease-in-out;
-}
-
-@keyframes hintFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
-}
-
-.services-showcase-stage {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background: radial-gradient(circle at 50% 50%, rgba(49, 91, 219, 0.04) 0%, transparent 70%);
-}
-
-.services-tumble-deck {
-  width: 100% !important;
-  cursor: grab;
-}
-
-.services-tumble-deck:active {
-  cursor: grabbing;
-}
-
-/* ============================================================
-   Services Grid (The Four Things)
-   ============================================================ */
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 4rem;
-}
-
-.service-card {
-  position: relative;
-  background: color-mix(in srgb, var(--ink, #030303) 90%, rgba(255, 255, 255, 0.02));
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
-  border-radius: 12px;
-  padding: 2.25rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1.5rem;
-  outline: none;
-  overflow: hidden;
-  transition: border-color 0.4s ease, transform 0.4s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)), box-shadow 0.4s ease;
-}
-
-.service-card:hover,
-.service-card:focus-visible,
-.service-card--active {
-  border-color: color-mix(in srgb, var(--accent, #315bdb) 40%, var(--line));
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.7),
-              0 0 0 1px color-mix(in srgb, var(--accent, #315bdb) 25%, transparent);
-}
-
-.service-card__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.service-card__badge {
+.services-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: var(--muted, #a1a1aa);
-  transition: color 0.3s ease;
-}
-
-.service-card:hover .service-card__badge,
-.service-card--active .service-card__badge {
-  color: var(--accent, #315bdb);
-}
-
-.service-card__num {
-  font-variant-numeric: tabular-nums;
-}
-
-.service-card__dash {
-  opacity: 0.5;
-}
-
-.service-card__icon {
-  color: var(--accent, #315bdb);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover .service-card__icon,
-.service-card--active .service-card__icon {
-  transform: scale(1.15);
-}
-
-.service-card__arrow {
-  color: var(--muted, #a1a1aa);
-  transition: transform 0.35s ease, color 0.3s ease;
-}
-
-.service-card:hover .service-card__arrow,
-.service-card--active .service-card__arrow {
-  color: var(--accent, #315bdb);
-  transform: translate(2px, -2px);
-}
-
-.service-card__main {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.service-card__title {
-  font-family: var(--font-display, "Instrument Serif", serif);
-  font-size: clamp(1.6rem, 2.2vw, 2.1rem);
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: var(--paper, #f7f5f0);
-  margin: 0;
-  line-height: 1.15;
-}
-
-.service-card__desc {
-  font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: 0.88rem;
-  line-height: 1.65;
-  color: var(--muted, #a1a1aa);
-  margin: 0;
-}
-
-.service-card__highlight {
-  padding-top: 0.8rem;
-  border-top: 1px dashed color-mix(in srgb, var(--line) 80%, transparent);
-  font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: 0.8rem;
-  line-height: 1.6;
-  color: color-mix(in srgb, var(--paper) 75%, transparent);
-}
-
-.service-card__highlight p {
-  margin: 0;
-}
-
-.service-card__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: auto;
-}
-
-.service-card__tag {
-  font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--paper) 80%, transparent);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
+  padding: 0.38rem 0.85rem;
   border-radius: 999px;
-  padding: 0.25rem 0.75rem;
-  transition: all 0.25s ease;
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--muted, #828282);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
 }
 
-.service-card:hover .service-card__tag,
-.service-card--active .service-card__tag {
-  border-color: color-mix(in srgb, var(--accent, #315bdb) 35%, transparent);
-  background: color-mix(in srgb, var(--accent, #315bdb) 8%, transparent);
-  color: var(--paper, #f7f5f0);
+.services-pill:hover {
+  color: var(--paper, #FAF9FC);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.service-card__glow {
-  position: absolute;
-  bottom: -40px;
-  right: -40px;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(49, 91, 219, 0.18) 0%, transparent 70%);
-  filter: blur(25px);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+.services-pill__num {
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-weight: 700;
+  font-size: 0.72rem;
+  opacity: 0.75;
 }
 
-.service-card:hover .service-card__glow,
-.service-card--active .service-card__glow {
+.services-pill--active {
+  color: var(--paper, #FAF9FC);
+  background: color-mix(in srgb, var(--accent, #315bdb) 18%, rgba(255, 255, 255, 0.04));
+  border-color: color-mix(in srgb, var(--accent, #315bdb) 45%, transparent);
+  box-shadow: 0 0 16px rgba(49, 91, 219, 0.25);
+}
+
+.services-pill--active .services-pill__num {
+  color: var(--accent-light, #A5B8FC);
   opacity: 1;
 }
 
 /* ============================================================
-   Bottom Call to Action Banner
+   3D Tumble Scene
    ============================================================ */
 
-.services-footer-banner {
+.services-scene-container {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.service-tumble-card {
+  position: absolute;
+  left: 50%;
+  top: var(--td-top, 240px);
+  width: var(--td-w, 680px);
+  height: var(--td-h, 360px);
+  margin-left: calc(var(--td-w, 680px) / -2);
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  will-change: transform, opacity;
+  border-radius: 14px;
+  overflow: hidden;
+  pointer-events: auto;
+  cursor: pointer;
+  background: linear-gradient(145deg, rgba(16, 16, 20, 0.96) 0%, rgba(8, 8, 10, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9),
+              inset 0 1px 0 rgba(255, 255, 255, 0.12),
+              inset 0 0 24px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.25rem, 2.2vw, 2.2rem);
+  box-sizing: border-box;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  user-select: none;
+}
+
+.service-tumble-card:focus-visible,
+.service-tumble-card:hover {
+  border-color: color-mix(in srgb, var(--accent, #315bdb) 35%, rgba(255, 255, 255, 0.15));
+}
+
+.service-tumble-card--active {
+  border-color: color-mix(in srgb, var(--accent, #315bdb) 45%, rgba(255, 255, 255, 0.18));
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.95),
+              0 0 35px -5px rgba(49, 91, 219, 0.22),
+              inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* 3D Light falloff shading overlay */
+.service-tumble-card__lighting {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: #000;
+  opacity: var(--td-shade, 0);
+  border-radius: inherit;
+  transition: opacity 0.1s linear;
+  z-index: 12;
+}
+
+/* ---- Card Header ---- */
+.service-tumble-card__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  padding: 2.2rem 2.5rem;
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(49, 91, 219, 0.05) 100%),
-              var(--ink, #030303);
-  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 2;
 }
 
-.services-footer-banner__content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  max-width: 60ch;
-}
-
-.services-banner-lead {
-  font-family: var(--font-display, "Instrument Serif", serif);
-  font-size: clamp(1.3rem, 1.8vw, 1.6rem);
-  color: var(--paper, #f7f5f0);
-  font-weight: 400;
-}
-
-.services-banner-sub {
-  font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: 0.85rem;
-  color: var(--muted, #a1a1aa);
-  margin: 0;
-  line-height: 1.5;
-}
-
-.services-banner-btn {
+.service-tumble-card__badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1.6rem;
-  background: var(--paper, #f7f5f0);
-  color: var(--ink, #030303);
-  border-radius: 999px;
+  gap: 0.45rem;
   font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: 0.84rem;
+  font-size: 0.74rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: all 0.3s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+  letter-spacing: 0.12em;
+  color: var(--muted, #828282);
 }
 
-.services-banner-btn:hover {
+.service-tumble-card__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
   background: var(--accent, #315bdb);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px -4px rgba(49, 91, 219, 0.5);
+  box-shadow: 0 0 8px var(--accent, #315bdb);
+}
+
+.service-tumble-card__card-label {
+  color: var(--paper, #FAF9FC);
+}
+
+.service-tumble-card__sep {
+  opacity: 0.4;
+}
+
+.service-tumble-card__total {
+  opacity: 0.6;
+}
+
+.service-tumble-card__icon-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.service-tumble-card__icon {
+  color: var(--accent-light, #A5B8FC);
+}
+
+.service-tumble-card__arrow {
+  color: var(--muted, #828282);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-tumble-card:hover .service-tumble-card__arrow,
+.service-tumble-card--active .service-tumble-card__arrow {
+  color: var(--accent-light, #A5B8FC);
+  transform: translate(1px, -1px);
+}
+
+/* ---- Card Body ---- */
+.service-tumble-card__main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.service-tumble-card__eyebrow {
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent, #315bdb);
+}
+
+.service-tumble-card__title {
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: clamp(1.2rem, 1.9vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--paper, #FAF9FC);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.service-tumble-card__desc {
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: clamp(0.86rem, 1.15vw, 0.98rem);
+  line-height: 1.6;
+  color: var(--secondary, #c2c2c2);
+  margin: 0;
+  max-width: 58ch;
+}
+
+/* ---- Card Capability Tags ---- */
+.service-tumble-card__tags {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.service-tumble-card__tag {
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: clamp(0.68rem, 0.9vw, 0.74rem);
+  font-weight: 500;
+  color: #a1a1aa;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.28rem 0.65rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* ---- Card Footer ---- */
+.service-tumble-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  z-index: 2;
+}
+
+.service-tumble-card__highlight {
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: clamp(0.72rem, 0.95vw, 0.78rem);
+  color: var(--muted, #828282);
+  line-height: 1.45;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 78%;
+}
+
+.service-tumble-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #10b981;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.service-status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
 }
 
 /* ============================================================
-   Responsive Design
+   Bottom Status & Guidance Hint
    ============================================================ */
 
-@media (max-width: 960px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+.services-footer-hint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  z-index: 10;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+
+.services-footer-hint__left {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.services-hint-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent, #315bdb);
+  animation: servicesHintPulse 2s infinite ease-in-out;
+}
+
+@keyframes servicesHintPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.services-hint-text {
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: 0.78rem;
+  color: var(--muted, #828282);
+  letter-spacing: 0.02em;
+}
+
+.services-footer-hint__progress {
+  flex: 1;
+  max-width: 220px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.services-hint-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent, #315bdb), var(--accent-light, #A5B8FC));
+  border-radius: 999px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services-next-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--paper, #FAF9FC);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.25s ease, color 0.25s ease;
+}
+
+.services-next-link:hover {
+  opacity: 1;
+  color: var(--accent-light, #A5B8FC);
+}
+
+/* ============================================================
+   Responsive Adjustments
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .services-stage {
+    padding: 1.25rem 1.25rem;
   }
 
-  .services-footer-banner {
+  .services-header-wrap {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.8rem;
+    gap: 0.8rem;
   }
 
-  .services-showcase-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
+  .services-nav-pills {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .services-footer-hint__progress {
+    display: none;
   }
 }
 
 @media (max-width: 600px) {
-  .services-section {
-    padding-inline: 1.25rem;
+  .service-tumble-card {
+    padding: 1.1rem;
+    gap: 0.5rem;
   }
 
-  .service-card {
-    padding: 1.6rem 1.4rem;
+  .service-tumble-card__title {
+    font-size: 1.15rem;
   }
 
-  .services-banner-btn {
-    width: 100%;
-    justify-content: center;
+  .service-tumble-card__desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .service-tumble-card__highlight {
+    display: none;
+  }
+
+  .service-tumble-card__tags .service-tumble-card__tag:nth-child(n+3) {
+    display: none;
+  }
+
+  .services-next-link span {
+    display: none;
   }
 }
