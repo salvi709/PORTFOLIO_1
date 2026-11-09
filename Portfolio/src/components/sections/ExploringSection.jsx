@@ -3,7 +3,7 @@ import { currentlyExploring } from "../../data/portfolioData";
 import CuriousNote from "../common/CuriousNote";
 export default function ExploringSection() {
   return (
-    <section className="portfolio-section exploring-section">
+    <section id="exploring" className="portfolio-section exploring-section">
       <div>
         <p className="eyebrow">CURRENTLY EXPLORING</p>
         <h2>

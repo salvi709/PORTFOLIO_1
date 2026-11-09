@@ -181,9 +181,9 @@
   align-items: center;
   gap: 0.45rem;
   font-family: var(--font-body, "Manrope", sans-serif);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--muted, #828282);
 }
 
@@ -192,7 +192,6 @@
   height: 6px;
   border-radius: 50%;
   background: var(--accent, #315bdb);
-  box-shadow: 0 0 8px var(--accent, #315bdb);
 }
 
 .service-tumble-card__card-label {
@@ -208,14 +207,14 @@
 }
 
 .service-tumble-card__icon-bubble {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.45rem 0.65rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.035);
+  gap: 0.4rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s ease;
+  color: var(--paper, #FAF9FC);
 }
 
 .service-tumble-card__icon {
@@ -224,13 +223,12 @@
 
 .service-tumble-card__arrow {
   color: var(--muted, #828282);
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
-.service-tumble-card:hover .service-tumble-card__arrow,
-.service-tumble-card--active .service-tumble-card__arrow {
+.service-tumble-card:hover .service-tumble-card__arrow {
+  transform: translate(2px, -2px);
   color: var(--accent-light, #A5B8FC);
-  transform: translate(1px, -1px);
 }
 
 /* ---- Card Body ---- */

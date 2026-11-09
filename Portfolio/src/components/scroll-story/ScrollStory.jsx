@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SceneHero from "./EditorialHero";
@@ -9,20 +9,30 @@ import SceneMerge from "./MarqueeMerge";
 
 import ProjectVisual from "../common/ProjectVisual";
 import WorkDialog from "../common/WorkDialog";
+import SelectedWork from "../sections/SelectedWork";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import { developmentProjects, videoProjects } from "../../data/portfolioData";
+import { developmentProjects, videoProjects, galleryOrder } from "../../data/portfolioData";
 
 gsap.registerPlugin(ScrollTrigger);
 const SCRUB_QUERY = "(min-width: 700px) and (prefers-reduced-motion: no-preference)";
-const STORY_END = 7.3;
-const DURATION = HERO_OFFSET + STORY_END;
+const GALLERY_START = 7.9;
+const GALLERY_DURATION = galleryOrder.length * 1.15;
+const DURATION = HERO_OFFSET + GALLERY_START + GALLERY_DURATION;
 
 export default function ScrollStory() {
   const root = useRef(null), stage = useRef(null), master = useRef(null);
-  const videoUpdate = useRef(null);
+  const wheelUpdate = useRef(null), wheelProgress = useRef(0), videoUpdate = useRef(null);
   const [selected, setSelected] = useState(null);
   const cinematic = useMediaQuery(SCRUB_QUERY);
   const reduced = useMediaQuery("(prefers-reduced-motion: reduce)");
+  const navigateGallery = useCallback((index = -1) => {
+    const timeline = master.current;
+    if (!timeline?.scrollTrigger) return;
+    const progress = index < 0 ? 0 : (index + 1) / (galleryOrder.length + .3);
+    const trigger = timeline.scrollTrigger;
+    trigger.scroll(trigger.start + (trigger.end - trigger.start) * (HERO_OFFSET + GALLERY_START + progress * GALLERY_DURATION) / DURATION);
+    ScrollTrigger.update();
+  }, []);
 
   useLayoutEffect(() => {
     const rootNode = root.current, stageNode = stage.current;
@@ -52,8 +62,10 @@ export default function ScrollStory() {
         }
         return;
       }
+      const gallery = stageNode.querySelector(".selected-work");
       const scenes = [...stageNode.querySelectorAll(".scene")];
       const bridgeButtons = [...stageNode.querySelectorAll(".bridge-open")];
+      const clock = { value: 0 };
       let previousPhase = "", previousReady = null;
       const sync = () => {
         const elapsed = master.current?.time() || 0;
@@ -61,15 +73,19 @@ export default function ScrollStory() {
         videoUpdate.current?.(videoProgress(elapsed));
         rootNode.querySelector(".editorial-hero").dataset.floating = String(elapsed > .8 && elapsed < 4.9);
         theme(elapsed < 7.55);
-        const phase = time < .95 ? "hero" : time < 2.85 ? "build" : time < 5.2 ? "create" : "merge";
+        wheelProgress.current = clock.value;
+        wheelUpdate.current?.(clock.value);
+        const phase = time < .95 ? "hero" : time < 2.85 ? "build" : time < 5.2 ? "create" : time < 7.05 ? "merge" : "gallery";
         if (phase !== previousPhase) {
           previousPhase = phase; stageNode.dataset.phase = phase;
           const selectedIndex = ["hero", "build", "create", "merge"].indexOf(phase);
           scenes.forEach((el, i) => { el.inert = i !== selectedIndex; el.setAttribute("aria-hidden", String(i !== selectedIndex)); });
+          gallery.inert = phase !== "gallery";
+          gallery.setAttribute("aria-hidden", String(phase !== "gallery"));
         }
-        const ready = time >= 6.4 && time < 7.0;
+        const ready = time >= 6.8 && time < 7.2;
         if (previousReady !== ready) {
-          previousReady = ready;
+          previousReady = ready; stageNode.classList.toggle("gallery-ready", ready);
           bridgeButtons.forEach(el => { el.tabIndex = ready ? 0 : -1; el.inert = !ready; el.setAttribute("aria-hidden", String(!ready)); });
         }
       };
@@ -78,7 +94,13 @@ export default function ScrollStory() {
         scrollTrigger: {
           id: "portfolio-story", trigger: rootNode, pin: stageNode,
           start: "top top", scrub: true, invalidateOnRefresh: true,
-          end: () => `+=${Math.max(innerHeight * 2.8, 1800)}`,
+          // Preserve the existing pixels per story unit. Only the new zoom and
+          // quote chapters add distance; Build/Create/gallery pacing is unchanged.
+          end: () => {
+            // New reading content must not stretch the established cinematic timeline.
+            const reading = [...document.querySelectorAll(".portfolio-section:not([data-story-extra]),.site-footer")].reduce((sum, el) => sum + el.offsetHeight - [...el.querySelectorAll("[data-story-extra]")].reduce((extra, node) => extra + node.offsetHeight, 0), 0);
+            return `+=${(Math.max(innerHeight * 2, reading - innerHeight) + innerHeight * 1.5) * DURATION / 15.36}`;
+          },
           onRefresh: () => { sync(); },
         },
       });
@@ -86,9 +108,18 @@ export default function ScrollStory() {
       const story = gsap.timeline({ defaults: { ease: "none" } });
       const underlay = document.getElementById("bg-underlay") || stageNode;
       addHeroMotion(timeline, rootNode, underlay);
-      story.addLabel("hero", 0).addLabel("build", 1.25).addLabel("transform", 2.65).addLabel("create", 3.6).addLabel("converge", 5.3).addLabel("connect", 6.6);
-      gsap.set(".scene-build,.scene-create,.scene-merge,.story-frame,.echo-frame,.edit-tracks,.film-layer", { autoAlpha: 0 });
+      story.addLabel("hero", 0).addLabel("build", 1.25).addLabel("transform", 2.65).addLabel("create", 3.6).addLabel("converge", 5.3).addLabel("connect", 6.6).addLabel("gallery", GALLERY_START);
+      gsap.set(".scene-build,.scene-create,.scene-merge,.story-frame,.echo-frame,.edit-tracks,.film-layer,.gallery-cue,.embedded-work", { autoAlpha: 0 });
       const portrait = () => innerWidth < 1000 && innerHeight > innerWidth * .85;
+      const frameTarget = index => {
+        const wheel = stageNode.querySelector(".works-wheel");
+        const rect = wheel?.getBoundingClientRect(), origin = stageNode.getBoundingClientRect();
+        // Derive the ring from its resting geometry, even if refresh occurs
+        // while the live cards are halfway through the drum animation.
+        const radius = Number(wheel?.dataset.ringRadius), width = Number(wheel?.dataset.ringWidth), height = Number(wheel?.dataset.ringHeight);
+        const angle = index * Math.PI * 2 / galleryOrder.length;
+        return rect && width ? { left: rect.left - origin.left + rect.width / 2 + Math.sin(angle) * radius - width / 2, top: rect.top - origin.top + rect.height / 2 - Math.cos(angle) * radius - height / 2, width, height } : { left: innerWidth * .4, top: innerHeight * .35, width: innerWidth * .18, height: innerHeight * .14 };
+      };
       story
         .fromTo(".scene-build", { clipPath: "inset(0 0 100% 0)" }, { autoAlpha: 1, clipPath: "inset(0 0 0% 0)", duration: .8 }, .8)
         .from(".scene-build h2", { x: -38, duration: .65 }, 1.1)
@@ -121,20 +152,25 @@ export default function ScrollStory() {
         .from(".merge-cross", { scale: .65, opacity: 0, duration: .55 }, 5.8)
         .from(".merge-line", { clipPath: "inset(0 0 100% 0)", y: 8, duration: .5 }, 5.95)
         .to(".scene-merge", { y: -55, scale: .88, autoAlpha: 0, duration: .7 }, 6.6)
-        .to(".story-frame,.echo-frame", { autoAlpha: 0, duration: .5 }, 6.6);
+        .to(".gallery-cue", { autoAlpha: 1, duration: .4 }, 6.7)
+        .to(".gallery-cue", { autoAlpha: 0, y: -18, duration: .35 }, 7.12)
+        .to(".echo-frame", { left: () => frameTarget(0).left, top: () => frameTarget(0).top, width: () => frameTarget(0).width, height: () => frameTarget(0).height, rotation: 0, duration: 1.05 }, 6.7)
+        .to(".story-frame", { left: () => frameTarget(1).left, top: () => frameTarget(1).top, width: () => frameTarget(1).width, height: () => frameTarget(1).height, rotation: 360 / galleryOrder.length, duration: 1.05 }, 6.7)
+        .to(".embedded-work", { autoAlpha: 1, duration: .65 }, 7.25)
+        .to(".story-frame,.echo-frame", { autoAlpha: 0, duration: .25 }, 7.65)
+        .fromTo(clock, { value: 0 }, { value: 1, ease: "none", duration: GALLERY_DURATION }, GALLERY_START)
+;
       timeline.add(story, HERO_OFFSET);
       timeline.to(".story-progress", { scaleX: 1, ease: "none", duration: DURATION }, 0);
       sync();
     }, root);
     const onWorkLink = e => {
       if (!cinematic || e.defaultPrevented || !e.target.closest('a[href="#work"]')) return;
-      e.preventDefault();
-      const workEl = document.getElementById("work");
-      if (workEl) workEl.scrollIntoView({ behavior: "smooth" });
+      e.preventDefault(); navigateGallery();
     };
 
     document.addEventListener("click", onWorkLink);
-    const refresh = () => { if (active) { ScrollTrigger.refresh(); } };
+    const refresh = () => { if (active) { ScrollTrigger.refresh(); if (location.hash === "#work" && cinematic && scrollY < 2) navigateGallery(); } };
     document.fonts.ready.then(() => { if (active) refreshFrame = requestAnimationFrame(refresh); });
     rootNode.addEventListener("load", refresh, true);
     rootNode.addEventListener("loadedmetadata", refresh, true);
@@ -145,7 +181,7 @@ export default function ScrollStory() {
       context.revert(); master.current = null; delete document.documentElement.dataset.theme;
       rootNode.querySelectorAll("[inert],[aria-hidden]").forEach(el => { if (el.classList.contains("scene") || el.classList.contains("selected-work")) { el.inert = false; el.removeAttribute("aria-hidden"); } });
     };
-  }, [cinematic, reduced]);
+  }, [cinematic, reduced, navigateGallery]);
   return (
     <>
     <div id="hero" ref={root} className={`scroll-story ${cinematic ? "cinematic" : ""}`}>
@@ -220,7 +256,18 @@ export default function ScrollStory() {
           </button>
         </div>
 
+        <div className="gallery-cue">
+          <p className="eyebrow">04 / THE IDEAS BECOME THE WORK</p>
+          <p>
+            SELECTED <em>WORK</em>
+          </p>
+          <a className="text-link" href="#work">
+            Explore the collection <span>↓</span>
+          </a>
+        </div>
+
         <div className="story-progress" aria-hidden="true" />
+        {cinematic && <SelectedWork embedded controller={wheelUpdate} progressSource={wheelProgress} onNavigate={navigateGallery} />}
       </div>
 
       {selected && (
@@ -231,6 +278,7 @@ export default function ScrollStory() {
         />
       )}
     </div>
+    {!cinematic && <SelectedWork />}
     </>
   );
 }

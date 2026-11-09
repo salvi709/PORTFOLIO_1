@@ -49,7 +49,7 @@ export const services = [
   },
 ];
 
-// #region 3D Tumble Physics (from 21st.dev template adapted for finite 4 cards)
+// #region 3D Tumble Physics (adapted from 21st.dev template for finite 4 cards)
 export const clamp01 = (v) => (v < 0 ? 0 : v > 1 ? 1 : v);
 
 export function fallAngle(t) {
@@ -112,41 +112,46 @@ export default function ServicesSection() {
   const stageRef = useRef(null);
   const sceneRef = useRef(null);
   const cardRefs = useRef([]);
-  const [activeCard, setActiveCard] = useState(0);
   const stateRef = useRef({ pos: 0 });
-  const geoRef = useRef({ h: 360, gap: 90 });
+  const geoRef = useRef({ h: 320, gap: 70 });
+  const [activeCard, setActiveCard] = useState(0);
 
+  // Paint function applying 3D transforms strictly calculated from pos
   const paint = useCallback((pos) => {
-    stateRef.current.pos = pos;
     const { gap } = geoRef.current;
     cardRefs.current.forEach((el, k) => {
       if (!el) return;
       const p = cardPose(k, pos, 4);
       el.style.transform = `translate3d(0, ${-p.lift}px, ${p.z * gap}px) rotateX(${p.angle}deg)`;
       el.style.opacity = String(p.opacity);
-      el.style.visibility = p.opacity > 0.01 ? "visible" : "hidden";
-      const shade = p.flat ? 0.18 : (-p.angle / 90) * 0.18;
+      el.style.visibility = p.opacity > 0 ? "visible" : "hidden";
+      const shade = p.flat ? 0.08 : (-p.angle / 90) * 0.08;
       el.style.setProperty("--td-shade", String(shade));
     });
   }, []);
 
   useLayoutEffect(() => {
-    const section = sectionRef.current;
     const stage = stageRef.current;
     const scene = sceneRef.current;
-    if (!section || !stage || !scene) return;
+    const section = sectionRef.current;
+    if (!stage || !scene || !section) return;
 
-    // Responsive geometric fitting
+    // Responsive 3D geometry fit
     const fit = () => {
       const W0 = stage.clientWidth;
       const H0 = stage.clientHeight;
-      const wFrac = W0 < 480 ? 0.92 : W0 < 768 ? 0.86 : W0 < 1024 ? 0.75 : 0.62;
-      const aspect = W0 < 600 ? 1.55 : 1.88;
-      const h = Math.max(220, Math.min((W0 * wFrac) / aspect, H0 * 0.44, 430));
-      const w = h * aspect;
-      const top = Math.max(130, H0 / 2 - 0.5 * h);
-      geoRef.current = { h, gap: 0.28 * h };
-      scene.style.perspective = `${6 * h}px`;
+      const isMobile = W0 < 640;
+      const isTablet = W0 >= 640 && W0 < 1024;
+      const wFrac = isMobile ? 0.90 : isTablet ? 0.80 : 0.64;
+      const maxW = isMobile ? 440 : isTablet ? 700 : 860;
+      const w = Math.min(W0 * wFrac, maxW);
+      const aspect = isMobile ? 1.40 : 1.95;
+      const h = Math.max(260, Math.min(w / aspect, H0 * 0.44));
+      const top = Math.max(120, H0 * 0.36);
+      const gap = Math.max(30, 0.22 * h);
+      geoRef.current = { h, gap };
+
+      scene.style.perspective = `${Math.max(1200, 6 * h)}px`;
       scene.style.perspectiveOrigin = `50% ${top - 1.5 * h}px`;
       stage.style.setProperty("--td-w", `${w}px`);
       stage.style.setProperty("--td-h", `${h}px`);
@@ -167,7 +172,7 @@ export default function ServicesSection() {
           trigger: section,
           pin: stage,
           start: "top top",
-          end: () => `+=${Math.max(window.innerHeight * 2.3, 1600)}`,
+          end: () => `+=${Math.max(window.innerHeight * 2.2, 1600)}`,
           scrub: 0.5,
           invalidateOnRefresh: true,
           onUpdate: (self) => {
@@ -182,6 +187,7 @@ export default function ServicesSection() {
         ease: "none",
         duration: 3.0,
         onUpdate: () => {
+          stateRef.current.pos = posObj.pos;
           paint(posObj.pos);
         },
       });
@@ -193,7 +199,7 @@ export default function ServicesSection() {
     };
   }, [paint]);
 
-  // Smooth scroll to card when clicking navigation pills or card affordance
+  // Smooth scroll to card when clicking navigation pills
   const scrollToCard = (index) => {
     const st = ScrollTrigger.getById("services-scroll-deck");
     if (!st) return;
@@ -248,6 +254,7 @@ export default function ServicesSection() {
                 className={`service-tumble-card ${isActive ? "service-tumble-card--active" : ""}`}
                 role="group"
                 aria-label={`Card ${s.num}: ${s.name}`}
+                tabIndex={0}
                 onClick={() => {
                   if (activeCard < 3) {
                     scrollToCard(activeCard + 1);
@@ -307,7 +314,7 @@ export default function ServicesSection() {
             <span className="services-hint-dot" aria-hidden="true" />
             <span className="services-hint-text">
               {activeCard === 3
-                ? "04 of 04 · Ready to explore work"
+                ? "04 of 04 · Ready to explore further"
                 : `Card 0${activeCard + 1} of 04 · Scroll down to cycle services`}
             </span>
           </div>
@@ -319,8 +326,8 @@ export default function ServicesSection() {
             />
           </div>
 
-          <a href="#work" className="services-next-link">
-            <span>Selected Work / Off the Page</span>
+          <a href="#about" className="services-next-link">
+            <span>Behind the Scene / About</span>
             <ArrowDown size={14} />
           </a>
         </div>

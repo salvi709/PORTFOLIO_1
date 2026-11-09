@@ -76,8 +76,8 @@ const NIMBUS_CSS = `
   position:relative;
   display:inline-flex;
   align-items:center;
-  gap:4px;
-  padding:5px 6px;
+  gap:2px;
+  padding:3.5px 4.5px;
   border-radius:999px;
   isolation:isolate;
   font-family:var(--font-body, ui-sans-serif, -apple-system, "SF Pro Text", "Segoe UI", system-ui, sans-serif);
@@ -125,8 +125,8 @@ const NIMBUS_CSS = `
 /* Single Shared Active Bubble Sliding Indicator */
 .nimbus-active-bubble{
   position:absolute;
-  top:5px;
-  height:38px;
+  top:3.5px;
+  height:32px;
   left:0;
   border-radius:999px;
   z-index:0;
@@ -160,9 +160,9 @@ const NIMBUS_CSS = `
   z-index:1;
   display:inline-flex;
   align-items:center;
-  gap:7px;
-  height:38px;
-  padding:0 15px;
+  gap:5px;
+  height:32px;
+  padding:0 11px;
   border:1px solid transparent !important;
   border-radius:999px;
   background:transparent !important;
@@ -170,7 +170,7 @@ const NIMBUS_CSS = `
   color:var(--n-fg-soft);
   font-family:inherit;
   font-weight:500;
-  font-size:13px;
+  font-size:12.5px;
   line-height:1;
   letter-spacing:-.01em;
   text-decoration:none;
@@ -241,19 +241,19 @@ const NIMBUS_CSS = `
 .nimbus-nav[data-compact="true"] .nimbus-item{padding:0 12px}
 .nimbus-nav[data-compact="true"] .nimbus-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media (max-width:768px){
-  .nimbus-active-bubble{height:36px;top:4px}
-  .nimbus-nav{padding:4px 5px;gap:2px}
-  .nimbus-item{height:36px;padding:0 12px;font-size:12px;gap:5px}
+  .nimbus-active-bubble{height:30px;top:3px}
+  .nimbus-nav{padding:3px 4px;gap:2px}
+  .nimbus-item{height:30px;padding:0 10px;font-size:12px;gap:4px}
 }
 @media (max-width:540px){
-  .nimbus-active-bubble{height:34px;top:4px}
-  .nimbus-nav{padding:4px;gap:1px}
-  .nimbus-item{height:34px;padding:0 9px;font-size:11.5px;gap:4px}
+  .nimbus-active-bubble{height:28px;top:3px}
+  .nimbus-nav{padding:3px;gap:1px}
+  .nimbus-item{height:28px;padding:0 8px;font-size:11.5px;gap:3px}
   .nimbus-suffix{font-size:10.5px;margin-left:1px}
 }
 @media (max-width:390px){
-  .nimbus-item{padding:0 7px;font-size:10.5px;gap:3px}
-  .nv-ico svg{width:14px;height:14px}
+  .nimbus-item{padding:0 6px;font-size:10.5px;gap:2px}
+  .nv-ico svg{width:13px;height:13px}
 }
 @media (prefers-reduced-motion:reduce){.nv-ico svg,.nv-ico::before,.nv-ico::after,.nv-door{animation:none!important;transition:none}}
 `
