@@ -125,7 +125,7 @@ h1,h2,h3,h4 { font-weight: 400; }
   .magnetic { will-change: transform; }
 }
 @media (max-width:1100px) { .work-count { display: none; } .works-wheel .wheel-index-button { font-size: 10px; } }
-@media (max-width:900px) {
+@media (max-width:1024px) {
   .work-stage { padding: 90px 7% 55px; }
   .work-heading .section-heading h2 { font-size: clamp(32px,6vw,54px); }
   .hero-copy { width: 100%; }

@@ -14,7 +14,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import { developmentProjects, videoProjects, galleryOrder } from "../../data/portfolioData";
 
 gsap.registerPlugin(ScrollTrigger);
-const SCRUB_QUERY = "(min-width: 700px) and (prefers-reduced-motion: no-preference)";
+const SCRUB_QUERY = "(min-width: 1025px) and (prefers-reduced-motion: no-preference)";
 const GALLERY_START = 7.9;
 const GALLERY_DURATION = galleryOrder.length * 1.15;
 const DURATION = HERO_OFFSET + GALLERY_START + GALLERY_DURATION;
@@ -25,13 +25,18 @@ export default function ScrollStory() {
   const [selected, setSelected] = useState(null);
   const cinematic = useMediaQuery(SCRUB_QUERY);
   const reduced = useMediaQuery("(prefers-reduced-motion: reduce)");
-  const navigateGallery = useCallback((index = -1) => {
+  const navigateGallery = useCallback((index = -1, smooth = true) => {
     const timeline = master.current;
     if (!timeline?.scrollTrigger) return;
     const progress = index < 0 ? 0 : (index + 1) / (galleryOrder.length + .3);
     const trigger = timeline.scrollTrigger;
-    trigger.scroll(trigger.start + (trigger.end - trigger.start) * (HERO_OFFSET + GALLERY_START + progress * GALLERY_DURATION) / DURATION);
-    ScrollTrigger.update();
+    const targetY = trigger.start + (trigger.end - trigger.start) * (HERO_OFFSET + GALLERY_START + progress * GALLERY_DURATION) / DURATION + 10;
+    if (smooth) {
+      window.scrollTo({ top: targetY, behavior: "smooth" });
+    } else {
+      trigger.scroll(targetY);
+      ScrollTrigger.update();
+    }
   }, []);
 
   useLayoutEffect(() => {
@@ -165,8 +170,11 @@ export default function ScrollStory() {
       sync();
     }, root);
     const onWorkLink = e => {
-      if (!cinematic || e.defaultPrevented || !e.target.closest('a[href="#work"]')) return;
-      e.preventDefault(); navigateGallery();
+      const link = e.target.closest('a[href="#work"]');
+      if (!cinematic || e.defaultPrevented || !link) return;
+      if (link.closest('.portfolio-floating-header')) return;
+      e.preventDefault();
+      navigateGallery();
     };
 
     document.addEventListener("click", onWorkLink);

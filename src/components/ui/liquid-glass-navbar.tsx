@@ -76,8 +76,8 @@ const NIMBUS_CSS = `
   position:relative;
   display:inline-flex;
   align-items:center;
-  gap:2px;
-  padding:3.5px 4.5px;
+  gap:1.5px;
+  padding:2.5px 3.5px;
   border-radius:999px;
   isolation:isolate;
   font-family:var(--font-body, ui-sans-serif, -apple-system, "SF Pro Text", "Segoe UI", system-ui, sans-serif);
@@ -125,8 +125,8 @@ const NIMBUS_CSS = `
 /* Single Shared Active Bubble Sliding Indicator */
 .nimbus-active-bubble{
   position:absolute;
-  top:3.5px;
-  height:32px;
+  top:2.5px;
+  height:30px;
   left:0;
   border-radius:999px;
   z-index:0;
@@ -160,9 +160,9 @@ const NIMBUS_CSS = `
   z-index:1;
   display:inline-flex;
   align-items:center;
-  gap:5px;
-  height:32px;
-  padding:0 11px;
+  gap:4px;
+  height:30px;
+  padding:0 9px;
   border:1px solid transparent !important;
   border-radius:999px;
   background:transparent !important;

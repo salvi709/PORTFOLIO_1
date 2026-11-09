@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MarqueeMerge() {
   return (
-    <section className="scene scene-merge" aria-label="Build meets create">
+    <section id="merge" className="scene scene-merge" aria-label="Build meets create">
       <p className="eyebrow">03 / THE INTERSECTION</p>
       <h2 className="sr-only">BUILD × CREATE</h2>
       <div className="marquee-strip merge-build" aria-hidden="true"><div className="marquee-track build-track">{Array.from({ length: 12 }, (_, i) => <span key={i}>BUILD <i>•</i> </span>)}</div></div>

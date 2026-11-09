@@ -12,7 +12,7 @@ import WorkDialog from "../common/WorkDialog";
 import WorksWheel from "@/components/ui/works-wheel";
 
 gsap.registerPlugin(ScrollTrigger);
-const cinematicQuery = "(prefers-reduced-motion: no-preference)";
+const cinematicQuery = "(min-width: 1025px) and (prefers-reduced-motion: no-preference)";
 
 export default function SelectedWork({ embedded = false, controller, progressSource: externalProgress, onNavigate }) {
   const sectionRef = useRef(null);

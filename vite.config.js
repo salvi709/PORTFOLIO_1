@@ -14,7 +14,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  server: { port: 3000, host: "127.0.0.1", open: false },
+  server: { port: 3000, host: "0.0.0.0", open: false },
   build: {
     rollupOptions: {
       output: {

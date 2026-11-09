@@ -138,20 +138,27 @@ html[data-theme=light] .custom-cursor > span { border-color:#1118; }
   .fragment-timeline { display:none; }
   .work-heading .section-heading h2 { font-size:44px; }
 }
+@media (min-width:700px) and (max-width:1024px) {
+  .scene-merge { min-height:540px; height:75svh; }
+  .scene-merge > .eyebrow { top:16%; }
+  .scene-merge .merge-line { font-size:26px; bottom:16%; }
+  .marquee-strip { height:110px; }
+  .marquee-track { font-size:85px; }
+}
 @media (max-width:699px) {
   .site-nav { height:68px; }
   html[data-theme=light] .site-nav nav { background:#f7f6f2; border-color:#1112; }
   .editorial-hero.scene { height:100svh; min-height:620px; }
-  .editorial-hero .hero-copy { top:16%; left:7%; width:86%; z-index:4; }
-  .editorial-hero .hero-meta { font-size:7px; margin-bottom:13px; }
-  .editorial-hero h1 { font-size:clamp(65px,19vw,105px); line-height:.85; }
-  .editorial-hero h1 br { display:none; }
-  .editorial-hero h1 em { padding-left:.15em; }
-  .editorial-hero .hero-support { position:absolute; top:calc(68svh - 25px); left:0; width:100%; }
-  .editorial-hero .hero-tagline { font-size:11px; margin-top:0; }
-  .editorial-hero .hero-tagline em { font-size:18px; }
-  .editorial-hero .hero-link { position:absolute; right:0; bottom:0; font-size:10px; gap:10px; margin:0; }
-  .portrait-composition { top:28%; left:24%; height:49%; }
+  .editorial-hero .hero-copy { top:14%; left:7%; width:86%; z-index:4; }
+  .editorial-hero .hero-meta { font-size:7.5px; margin-bottom:12px; }
+  .editorial-hero h1 { font-size:clamp(48px,14vw,76px); line-height:.92; letter-spacing:-.035em; }
+  .editorial-hero h1 br { display:block; }
+  .editorial-hero h1 em { display:block; padding-left:0; margin-top:2px; }
+  .editorial-hero .hero-support { position:absolute; top:clamp(380px, 63svh, 540px); left:0; width:100%; }
+  .editorial-hero .hero-tagline { font-size:12px; margin-top:0; line-height:1.5; }
+  .editorial-hero .hero-tagline em { font-size:19px; }
+  .editorial-hero .hero-link { position:absolute; right:0; bottom:0; font-size:11px; gap:8px; margin:0; }
+  .portrait-composition { top:26%; left:24%; height:50%; }
   .portrait-caption { font-size:6px; right:-11px; }
   .fragment-code,.fragment-data,.fragment-ui,.creative-development { display:none; }
   .fragment-product { top:33%; right:3%; width:106px; z-index:3; }

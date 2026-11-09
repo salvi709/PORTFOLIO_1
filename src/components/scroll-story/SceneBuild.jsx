@@ -5,7 +5,7 @@ import { developmentProjects } from "../../data/portfolioData";
 
 export default function SceneBuild() {
   return (
-    <section className="scene scene-build" aria-label="Development and AI">
+    <section id="build" className="scene scene-build" aria-label="Development and AI">
       <div className="story-copy">
         <p className="eyebrow">
           01 / LOGIC INTO SOMETHING REAL

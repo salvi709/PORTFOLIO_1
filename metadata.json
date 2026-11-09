@@ -1,0 +1,6 @@
+{
+  "name": "Sarthak Salvi Portfolio",
+  "description": "Personal portfolio of Sarthak Salvi featuring creative development, AI engineering, interactive 3D, and visual storytelling.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

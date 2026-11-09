@@ -145,10 +145,18 @@ export default function ServicesSection() {
       const wFrac = isMobile ? 0.90 : isTablet ? 0.80 : 0.64;
       const maxW = isMobile ? 440 : isTablet ? 700 : 860;
       const w = Math.min(W0 * wFrac, maxW);
-      const aspect = isMobile ? 1.40 : 1.95;
-      const h = Math.max(260, Math.min(w / aspect, H0 * 0.44));
-      const top = Math.max(120, H0 * 0.36);
-      const gap = Math.max(30, 0.22 * h);
+      const aspect = isMobile ? 1.35 : isTablet ? 1.80 : 1.95;
+      const h = isMobile
+        ? Math.max(220, Math.min(w / aspect, H0 * 0.44))
+        : isTablet
+        ? Math.max(240, Math.min(w / aspect, H0 * 0.38))
+        : Math.max(260, Math.min(w / aspect, H0 * 0.44));
+      const top = isMobile
+        ? Math.max(145, Math.min(H0 * 0.30, 205))
+        : isTablet
+        ? Math.max(180, Math.min(H0 * 0.26, 250))
+        : Math.max(120, H0 * 0.36);
+      const gap = Math.max(26, 0.22 * h);
       geoRef.current = { h, gap };
 
       scene.style.perspective = `${Math.max(1200, 6 * h)}px`;

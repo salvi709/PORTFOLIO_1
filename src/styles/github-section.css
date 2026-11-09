@@ -249,6 +249,15 @@
    Responsive
    ============================================================ */
 @media (max-width: 900px) {
+  .github-section {
+    padding-block: 5rem;
+  }
+  .gh-grid-wrap {
+    margin-top: 3rem;
+  }
+  .gh-stats {
+    margin-top: 3rem;
+  }
   .gh-stat {
     padding-inline: 1rem;
   }
@@ -257,24 +266,30 @@
 @media (max-width: 600px) {
   .github-section {
     padding-inline: 1.25rem;
+    padding-block: 3.5rem;
   }
-
+  .gh-grid-wrap {
+    margin-top: 2.2rem;
+  }
   .gh-stat-divider {
     display: none;
   }
-
   .gh-stats {
     gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding-block: 1.5rem;
   }
-
   .gh-stat {
     flex: 1 1 calc(50% - 1rem);
     border-bottom: 1px solid var(--line);
     padding-bottom: 1.2rem;
   }
-
   .gh-stat:nth-last-child(-n+2) {
     border-bottom: none;
   }
+  .gh-cta {
+    margin-top: 2rem;
+  }
 }
+
 

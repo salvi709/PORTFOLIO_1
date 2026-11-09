@@ -6,6 +6,7 @@ import { videoProjects } from "../../data/portfolioData";
 export default function SceneCreate() {
   return (
     <section
+      id="create"
       className="scene scene-create"
       aria-label="Design and visual storytelling"
     >
