@@ -1255,7 +1255,10 @@ p {
 }
 .portrait figcaption {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
+  gap: 8px 14px;
   font-size: 8px;
   letter-spacing: 0.13em;
   color: var(--muted);
@@ -1623,6 +1626,37 @@ p {
     opacity: 0.7;
   }
 
+  .scene-build,
+  .scene-create {
+    padding: 85px 7%;
+    border-bottom: 1px solid var(--line);
+    background: var(--ink);
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .scene-build {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      grid-template-areas:
+        "copy art"
+        "code art";
+      gap: 24px 6%;
+      align-items: center;
+    }
+    .scene-build .story-copy { grid-area: copy; width: 100%; max-width: 100%; }
+    .scene-build .code-fragment { grid-area: code; margin: 0; width: 100%; max-width: 380px; }
+    .scene-build .mobile-story-art { grid-area: art; margin-top: 0; width: 100%; max-width: 100%; }
+
+    .scene-create {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 24px 6%;
+      align-items: center;
+    }
+    .scene-create .story-copy { order: 2; margin: 0; width: 100%; max-width: 100%; }
+    .scene-create .mobile-story-art { order: 1; margin-top: 0; width: 100%; max-width: 100%; }
+  }
+
   .scene-build .story-copy,
   .scene-create .story-copy {
     width: 100%;
@@ -1635,14 +1669,14 @@ p {
   }
   .story-copy h2,
   .scene-create .story-copy h2 {
-    font-size: clamp(58px, 10vw, 94px);
+    font-size: clamp(52px, 8.5vw, 86px);
   }
   .code-fragment {
     position: relative;
     top: auto;
     right: auto;
-    margin: 32px 0 0 0;
-    width: min(100%, 400px);
+    margin: 28px 0 0 0;
+    width: min(100%, 380px);
     transform: rotate(1deg);
   }
   .scene-create {

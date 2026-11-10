@@ -142,21 +142,31 @@ export default function ServicesSection() {
       const H0 = stage.clientHeight;
       const isMobile = W0 < 640;
       const isTablet = W0 >= 640 && W0 < 1024;
-      const wFrac = isMobile ? 0.90 : isTablet ? 0.80 : 0.64;
-      const maxW = isMobile ? 440 : isTablet ? 700 : 860;
+      const wFrac = isMobile ? 0.90 : isTablet ? 0.82 : 0.64;
+      const maxW = isMobile ? 420 : isTablet ? 680 : 860;
       const w = Math.min(W0 * wFrac, maxW);
-      const aspect = isMobile ? 1.35 : isTablet ? 1.80 : 1.95;
-      const h = isMobile
-        ? Math.max(220, Math.min(w / aspect, H0 * 0.44))
-        : isTablet
-        ? Math.max(240, Math.min(w / aspect, H0 * 0.38))
-        : Math.max(260, Math.min(w / aspect, H0 * 0.44));
+      const aspect = isMobile ? 1.30 : isTablet ? 1.75 : 1.95;
+
+      const headerEl = stage.querySelector(".services-header-wrap");
+      const footerHintEl = stage.querySelector(".services-footer-hint");
+      const headerH = headerEl ? headerEl.offsetHeight : 120;
+      const footerH = footerHintEl ? footerHintEl.offsetHeight : 50;
+
+      // Position cards with safe margin below header
       const top = isMobile
-        ? Math.max(145, Math.min(H0 * 0.30, 205))
+        ? headerH + 16
         : isTablet
-        ? Math.max(180, Math.min(H0 * 0.26, 250))
+        ? Math.max(headerH + 20, Math.min(H0 * 0.26, 260))
         : Math.max(120, H0 * 0.36);
-      const gap = Math.max(26, 0.22 * h);
+
+      const availableH = Math.max(200, H0 - top - footerH - 20);
+      const h = isMobile
+        ? Math.max(220, Math.min(w / aspect, availableH, 280))
+        : isTablet
+        ? Math.max(240, Math.min(w / aspect, availableH, 350))
+        : Math.max(260, Math.min(w / aspect, H0 * 0.44));
+
+      const gap = Math.max(24, 0.20 * h);
       geoRef.current = { h, gap };
 
       scene.style.perspective = `${Math.max(1200, 6 * h)}px`;

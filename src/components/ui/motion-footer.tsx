@@ -23,7 +23,7 @@ export function CinematicFooter() {
   useLayoutEffect(() => {
     const el = wrapper.current!;
     const media = gsap.matchMedia();
-    media.add("(prefers-reduced-motion: no-preference)", () => {
+    media.add("(min-width: 1025px) and (prefers-reduced-motion: no-preference)", () => {
       const context = gsap.context(() => {
         gsap.fromTo(".footer-giant-text", { y: 65, scale: .9, opacity: 0 }, {
           y: 0, scale: 1, opacity: 1, ease: "none",
@@ -31,7 +31,20 @@ export function CinematicFooter() {
         });
         gsap.fromTo(".footer-reveal", { y: 26, opacity: 0 }, {
           y: 0, opacity: 1, stagger: .12, ease: "power2.out",
-          scrollTrigger: { trigger: el, start: "top 85%", end: "top 12%", scrub: true },
+          scrollTrigger: { trigger: el, start: "top 85%", end: "top 20%", scrub: true },
+        });
+      }, el);
+      return () => context.revert();
+    });
+    media.add("(max-width: 1024px) and (prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        gsap.fromTo(".footer-giant-text", { y: 30, opacity: 0 }, {
+          y: 0, opacity: 0.35, ease: "none",
+          scrollTrigger: { trigger: el, start: "top 95%", end: "top 60%", scrub: true },
+        });
+        gsap.fromTo(".footer-reveal", { y: 20, opacity: 0 }, {
+          y: 0, opacity: 1, stagger: .08, ease: "power2.out",
+          scrollTrigger: { trigger: el, start: "top 90%", end: "top 50%", scrub: true },
         });
       }, el);
       return () => context.revert();
